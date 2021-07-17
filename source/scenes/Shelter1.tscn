@@ -1,0 +1,265 @@
+[gd_scene load_steps=19 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+next_pass = SubResource( 1 )
+albedo_color = Color( 0.741176, 0.239216, 0.239216, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+next_pass = SubResource( 3 )
+metallic = 0.75
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+next_pass = SubResource( 5 )
+metallic = 0.75
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+next_pass = SubResource( 15 )
+metallic = 0.75
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+next_pass = SubResource( 16 )
+metallic = 0.75
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=9]
+next_pass = SubResource( 17 )
+metallic = 0.75
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+next_pass = SubResource( 10 )
+albedo_color = Color( 0.945098, 0.945098, 0.494118, 1 )
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=13]
+next_pass = SubResource( 12 )
+albedo_color = Color( 0.968627, 0.647059, 0.301961, 1 )
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.01
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=14]
+next_pass = SubResource( 18 )
+metallic = 0.75
+
+[node name="Shelter1" type="Spatial"]
+
+[node name="MainStructureCSGCombiner" type="CSGCombiner" parent="."]
+
+[node name="RoofCSGBox1" type="CSGBox" parent="MainStructureCSGCombiner"]
+transform = Transform( 0.848085, -0.52986, 0, 0.52986, 0.848085, 0, 0, 0, 1, -0.53, 0.701, 0 )
+width = 1.30103
+height = 0.0810545
+depth = 2.27676
+material = SubResource( 2 )
+
+[node name="CSGBox1" type="CSGBox" parent="MainStructureCSGCombiner/RoofCSGBox1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.626505, 0.0398879, 0 )
+width = 0.0832767
+height = 0.0465248
+depth = 2.4153
+material = SubResource( 4 )
+
+[node name="CSGBox2" type="CSGBox" parent="MainStructureCSGCombiner/RoofCSGBox1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033502, 0.0400569, -1.16436 )
+width = 1.24544
+height = 0.0465248
+depth = 0.0830372
+material = SubResource( 6 )
+
+[node name="CSGBox3" type="CSGBox" parent="MainStructureCSGCombiner/RoofCSGBox1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034, 0.04, 1.164 )
+width = 1.24544
+height = 0.0465248
+depth = 0.0830372
+material = SubResource( 7 )
+
+[node name="RoofCSGBox2" type="CSGBox" parent="MainStructureCSGCombiner"]
+transform = Transform( 0.848085, 0.52986, 0, -0.52986, 0.848085, 0, 0, 0, 1, 0.53, 0.701, 0 )
+width = 1.30103
+height = 0.0810545
+depth = 2.27676
+material = SubResource( 2 )
+
+[node name="CSGBox1" type="CSGBox" parent="MainStructureCSGCombiner/RoofCSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.627, 0.04, 0 )
+width = 0.0832767
+height = 0.0465248
+depth = 2.4153
+material = SubResource( 4 )
+
+[node name="CSGBox2" type="CSGBox" parent="MainStructureCSGCombiner/RoofCSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.04, -1.164 )
+width = 1.24544
+height = 0.0465248
+depth = 0.0830372
+material = SubResource( 8 )
+
+[node name="CSGBox3" type="CSGBox" parent="MainStructureCSGCombiner/RoofCSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.04, 1.164 )
+width = 1.24544
+height = 0.0465248
+depth = 0.0830372
+material = SubResource( 9 )
+
+[node name="CSGBox" type="CSGBox" parent="MainStructureCSGCombiner"]
+material = SubResource( 11 )
+
+[node name="CSGBox1" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 0.848085, -0.52986, 0, 0.52986, 0.848085, 0, 0, 0, 1, -0.636936, 0.965569, 0 )
+operation = 2
+width = 1.28267
+height = 0.622273
+
+[node name="CSGBox2" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 0.848085, 0.52986, 0, -0.52986, 0.848085, 0, 0, 0, 1, 0.637, 0.96536, 0 )
+operation = 2
+width = 1.28267
+height = 0.622273
+
+[node name="PillarCSGBox1" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00897, -0.348093, 1.01217 )
+width = 0.12
+height = 1.29824
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="PillarCSGBox2" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.009, -0.348, 1.012 )
+width = 0.12
+height = 1.29824
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="PillarCSGBox3" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.009, -0.348, -1.012 )
+width = 0.12
+height = 1.29824
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="PillarCSGBox4" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.009, -0.348, -1.012 )
+width = 0.12
+height = 1.29824
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="BeamCSGBox1" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311139, 1.012 )
+width = 2.29573
+height = 0.12
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="BeamCSGBox2" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311, -1.012 )
+width = 2.29573
+height = 0.12
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="BeamCSGBox3" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.009, 0.311, 0 )
+width = 2.40122
+height = 0.12
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="BeamCSGBox4" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.009, 0.311, 0 )
+width = 2.40122
+height = 0.12
+depth = 0.12
+material = SubResource( 13 )
+
+[node name="RoofBeamCSGBox9" type="CSGBox" parent="MainStructureCSGCombiner/CSGBox"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.05, 0 )
+width = 2.46306
+height = 0.12
+depth = 0.12
+material = SubResource( 14 )

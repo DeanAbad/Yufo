@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://source/scenes/Shelter1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/scripts/POVKinematicBody.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.02
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=1]
+next_pass = SubResource( 3 )
+albedo_color = Color( 0.588235, 0.952941, 0.458824, 1 )
+rim_enabled = true
+rim = 0.02
+rim_tint = 1.0
+
+[sub_resource type="CapsuleShape" id=2]
+
+[node name="DewRootVillage" type="Spatial"]
+
+[node name="MainStructureCSGCombiner1" type="CSGCombiner" parent="."]
+
+[node name="CSGCylinder" type="CSGCylinder" parent="MainStructureCSGCombiner1"]
+radius = 1.38104
+height = 0.295387
+sides = 12
+material = SubResource( 1 )
+
+[node name="Shelter1" parent="MainStructureCSGCombiner1" instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.668959, 0 )
+
+[node name="MainStructureCSGCombiner2" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.918, 0, -3.945 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="MainStructureCSGCombiner2"]
+radius = 1.38104
+height = 0.295387
+sides = 12
+material = SubResource( 1 )
+
+[node name="Shelter1" parent="MainStructureCSGCombiner2" instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.668959, 0 )
+
+[node name="MainStructureCSGCombiner3" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.918, 0, -3.945 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="MainStructureCSGCombiner3"]
+radius = 1.38104
+height = 0.295387
+sides = 12
+material = SubResource( 1 )
+
+[node name="Shelter1" parent="MainStructureCSGCombiner3" instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.668959, 0 )
+
+[node name="POVKinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.982372, 0.186936, 0, -0.186936, 0.982372, 0, -0.606263, 0.571735 )
+script = ExtResource( 2 )
+
+[node name="CameraStand" type="Spatial" parent="POVKinematicBody"]
+
+[node name="HAxis" type="Spatial" parent="POVKinematicBody/CameraStand"]
+
+[node name="VAxis" type="Spatial" parent="POVKinematicBody/CameraStand/HAxis"]
+
+[node name="Camera" type="Camera" parent="POVKinematicBody/CameraStand/HAxis/VAxis"]
+transform = Transform( 1, 0, 0, 0, 0.997264, 0.0739171, 0, -0.0739171, 0.997264, 0, 1.06974, 3.0232 )
+
+[node name="SpotLight" type="SpotLight" parent="POVKinematicBody/CameraStand/HAxis/VAxis/Camera"]
+transform = Transform( 1, 0, 0, 0, 0.82107, 0.570828, 0, -0.570828, 0.82107, 0, 1.06638, -0.500116 )
+light_energy = 0.25
+light_indirect_energy = 0.25
+light_specular = 1.0
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 5.23499
+spot_angle = 32.3438
+
+[node name="CollisionShape" type="CollisionShape" parent="POVKinematicBody"]
+shape = SubResource( 2 )
+disabled = true
